@@ -1,0 +1,651 @@
+// Variables
+$primary-color: #a6c1ee;
+$secondary-color: #f9c5d1;
+$text-color: #4a4a4a;
+$light-text-color: #7a7a7a;
+$background-color: #fafafa;
+$card-background: #ffffff;
+$border-color: #eeeeee;
+$shadow-color: rgba(0, 0, 0, 0.05);
+$hover-color: #f5f5f5;
+$dark-primary: #6d8cb0;
+$dark-secondary: #b38f99;
+$dark-background: #252836;
+$dark-card: #2d3142;
+$dark-text: #e5e5e5;
+$dark-light-text: #b3b3b3;
+$dark-border: #3d4257;
+$transition-time: 0.3s;
+$border-radius: 12px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin card {
+  background-color: $card-background;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 15px $shadow-color;
+  transition: transform $transition-time, box-shadow $transition-time;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px $shadow-color;
+  }
+
+  .dark-theme & {
+    background-color: $dark-card;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  .dark-theme & {
+    background: linear-gradient(135deg, lighten($dark-primary, 10%), lighten($dark-secondary, 10%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin responsive-grid($min-width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  color: $text-color;
+  line-height: 1.6;
+  background-color: $background-color;
+  background-image: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($secondary-color, 0.1));
+  transition: background-color $transition-time, color $transition-time;
+  
+  &.dark-theme {
+    color: $dark-text;
+    background-color: $dark-background;
+    background-image: linear-gradient(135deg, rgba($dark-primary, 0.2), rgba($dark-secondary, 0.2));
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+// Header styles
+.header {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: $border-radius;
+  background-color: $card-background;
+  box-shadow: 0 4px 15px $shadow-color;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+  }
+  
+  .dark-theme & {
+    background-color: $dark-card;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    &::before {
+      background: linear-gradient(90deg, $dark-primary, $dark-secondary);
+    }
+  }
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  padding: 5px;
+  
+  .dark-theme & {
+    background: linear-gradient(135deg, $dark-primary, $dark-secondary);
+  }
+}
+
+.profile-picture-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $card-background;
+  @include flex-center;
+  font-size: 3rem;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    background-color: $dark-card;
+    color: $dark-light-text;
+  }
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  @include gradient-text;
+}
+
+.profile-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    color: $dark-light-text;
+  }
+}
+
+.profile-quote {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: $light-text-color;
+  position: relative;
+  padding: 0 1.5rem;
+  
+  &::before, &::after {
+    content: '"';
+    font-size: 1.5rem;
+    color: rgba($primary-color, 0.5);
+    position: absolute;
+  }
+  
+  &::before {
+    left: 0;
+    top: -10px;
+  }
+  
+  &::after {
+    right: 0;
+    bottom: -10px;
+  }
+  
+  .dark-theme & {
+    color: $dark-light-text;
+    
+    &::before, &::after {
+      color: rgba($dark-primary, 0.5);
+    }
+  }
+}
+
+.profile-intro {
+  max-width: 800px;
+  margin-bottom: 2rem;
+  
+  p {
+    margin-bottom: 1rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  @include gradient-text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    color: $dark-light-text;
+  }
+}
+
+// Navigation tabs
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: $card-background;
+  color: $text-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-time;
+  font-weight: 500;
+  box-shadow: 0 2px 5px $shadow-color;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba($primary-color, 0.3);
+  }
+  
+  .dark-theme & {
+    background-color: $dark-card;
+    color: $dark-text;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    &:hover {
+      background-color: rgba($dark-primary, 0.3);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, $dark-primary, $dark-secondary);
+      box-shadow: 0 4px 10px rgba($dark-primary, 0.5);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+// Section styles
+.section {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+  
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    border-radius: 3px;
+  }
+  
+  .dark-theme & {
+    &::after {
+      background: linear-gradient(90deg, $dark-primary, $dark-secondary);
+    }
+  }
+}
+
+// Education section
+.education-container {
+  @include responsive-grid(280px, 2rem);
+}
+
+.education-item {
+  @include card;
+  padding: 1.5rem;
+  transition: all $transition-time;
+}
+
+.education-school {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: $primary-color;
+  
+  .dark-theme & {
+    color: lighten($dark-primary, 10%);
+  }
+}
+
+.education-degree {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-period {
+  font-size: 0.9rem;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    color: $dark-light-text;
+  }
+}
+
+// Skills section
+.skills-container {
+  @include responsive-grid(280px, 2rem);
+}
+
+.skill-item {
+  @include card;
+  padding: 1.5rem;
+}
+
+.skill-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: $primary-color;
+  
+  .dark-theme & {
+    color: lighten($dark-primary, 10%);
+  }
+}
+
+.skill-bar {
+  height: 10px;
+  background-color: $border-color;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  
+  .dark-theme & {
+    background-color: $dark-border;
+  }
+}
+
+.skill-progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, $primary-color, $secondary-color);
+  border-radius: 5px;
+  
+  .dark-theme & {
+    background: linear-gradient(90deg, $dark-primary, $dark-secondary);
+  }
+}
+
+.skill-description {
+  font-size: 0.95rem;
+}
+
+// Projects section
+.projects-container {
+  @include responsive-grid(280px, 2rem);
+}
+
+.project-item {
+  @include card;
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: $primary-color;
+  
+  .dark-theme & {
+    color: lighten($dark-primary, 10%);
+  }
+}
+
+.project-description {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background-color: rgba($primary-color, 0.1);
+  color: $primary-color;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  transition: all $transition-time;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .dark-theme & {
+    background-color: rgba($dark-primary, 0.3);
+    color: lighten($dark-primary, 15%);
+    
+    &:hover {
+      background-color: rgba($dark-primary, 0.4);
+    }
+  }
+}
+
+// Interests section
+.interests-container {
+  @include responsive-grid(280px, 2rem);
+}
+
+.interest-item {
+  @include card;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.interest-icon {
+  font-size: 2.5rem;
+  color: $primary-color;
+  margin-bottom: 1rem;
+  
+  .dark-theme & {
+    color: lighten($dark-primary, 10%);
+  }
+}
+
+.interest-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.interest-description {
+  font-size: 0.95rem;
+}
+
+// Contact section
+.contact-grid {
+  @include responsive-grid(240px, 2rem);
+}
+
+.contact-item {
+  @include card;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: $primary-color;
+  margin-bottom: 1rem;
+  
+  .dark-theme & {
+    color: lighten($dark-primary, 10%);
+  }
+}
+
+.contact-method {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.contact-note {
+  font-size: 0.8rem;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    color: $dark-light-text;
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-color;
+  color: $light-text-color;
+  
+  .dark-theme & {
+    border-top: 1px solid $dark-border;
+    color: $dark-light-text;
+  }
+}
+
+// Theme switcher
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.theme-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-time;
+  background-color: $card-background;
+  color: $text-color;
+  font-size: 0.9rem;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+  }
+  
+  &.dark {
+    background-color: $dark-card;
+    color: $dark-text;
+    
+    &:hover {
+      background-color: rgba($dark-primary, 0.3);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, $dark-primary, $dark-secondary);
+    }
+  }
+  
+  .dark-theme & {
+    background-color: $dark-card;
+    color: $dark-text;
+    
+    &:hover {
+      background-color: rgba($dark-primary, 0.3);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, $dark-primary, $dark-secondary);
+    }
+    
+    &.light {
+      background-color: rgba($card-background, 0.8);
+      color: $text-color;
+      
+      &:hover {
+        background-color: $card-background;
+      }
+      
+      &.active {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        color: white;
+      }
+    }
+  }
+}

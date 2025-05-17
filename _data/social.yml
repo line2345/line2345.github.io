@@ -3,7 +3,7 @@
   icon: fas fa-envelope
 - title: Wechat
   url: weixin://contacts/profile/your_wechat_id
-  icon: fa fa-wechat
+  icon: fab fa-weixin
 - title: Twitter
   url: https://twitter.com/vszhub
   icon: fab fa-twitter
