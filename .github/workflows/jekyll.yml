@@ -33,21 +33,47 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@v1.207.0
         with:
-          ruby-version: '2.2.10' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          ruby-version: '2.7' # 使用更现代但广泛兼容的版本
+          bundler-cache: false # 禁用缓存，手动处理依赖
+
+      - name: Update dependencies
+        run: |
+          # 备份原始文件
+          cp Gemfile Gemfile.backup || true
+          cp Gemfile.lock Gemfile.lock.backup || true
+          
+          # 删除 Gemfile.lock 以便重新生成
+          rm -f Gemfile.lock
+          
+          # 更新 listen gem 版本，如果存在
+          if grep -q "gem 'listen'" Gemfile; then
+            sed -i "s/gem 'listen'.*$/gem 'listen', '~> 3.7.0'/" Gemfile
+          elif grep -q 'gem "listen"' Gemfile; then
+            sed -i 's/gem "listen".*$/gem "listen", "~> 3.7.0"/' Gemfile
+          else
+            echo "gem 'listen', '~> 3.7.0'" >> Gemfile
+          fi
+          
+          # 确保安装正确版本的 bundler
+          gem install bundler -v "~> 2.3.0"
+          
+          # 安装依赖
+          bundle install
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
