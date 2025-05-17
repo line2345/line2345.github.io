@@ -1,0 +1,14 @@
+<h3 class="recommendations-title">推荐内容</h3>
+<div class="recommendations-list">
+  {% if site.recommendations %}
+    <ul class="recommendations-items">
+    {% for item in site.recommendations limit:5 %}
+      <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>暂无推荐内容</p>
+  {% endif %}
+</div>

@@ -1,4 +1,4 @@
-// Table of Contents
+/* Table of Contents */
 
 .toc-wrapper {
   display: inline-block;
@@ -7,29 +7,29 @@
   width: auto;
   padding-left: var(--spacer);
   padding-right: var(--spacer);
+  margin-left: 0.5rem;
+  border-left: 1px solid rgba(200, 200, 200, 0.3);
 }
 
 .toc-title {
-  text-align: center;
+  text-align: left;
   font-size: 1em;
-  font-weight: bold;
-  border: 1px solid;
-  border-radius: 0.3em 0.3em 0 0;
-  padding: 0.5rem;
-  margin: 0;
-  color: var(--body-bg);
-  background-color: var(--body-color);
-  border-color: var(--border-color);
+  font-weight: normal;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
 
 .toc-nav {
-  font-size: 0.8em;
-  max-height: 60vh;
-  overflow-y: scroll;
-  border: 1px solid;
-  border-top: 0px;
-  border-radius: 0 0 0.3em 0.3em;
-  border-color: var(--border-color);
+  font-size: 0.9em;
+  max-height: 70vh;
+  overflow-y: auto;
+  border: none;
+  padding-left: 0.5rem;
 
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
@@ -45,27 +45,71 @@
     margin: 0;
     display: block;
     text-decoration: none;
+    color: #555;
+    transition: color 0.2s ease;
+    line-height: 1.7;
+  }
+
+  a:hover {
+    color: #000;
   }
 
   ul {
     list-style: none;
 
     li {
-      font-weight: bold;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
 
       a {
-        padding-top: .2em;
-        padding-bottom: .2em;
-        padding-left: .5em;
-        padding-right: .5em;
-        border-bottom: 1px solid var(--border-color);
+        padding: 0;
+        border-bottom: none;
+        position: relative;
+      }
+      
+      a.active, a:hover {
+        color: #000;
+        text-decoration: underline;
+        text-decoration-color: #0cbfc7;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
       }
     }
   }
 
+  li ul {
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+  }
+
+  li ul li {
+    margin-bottom: 0.4rem;
+  }
+
   li ul li a {
     font-weight: normal;
-    padding-left: 1.25em;
-    padding-right: .5em;
+    font-size: 0.95em;
+    color: #777;
+  }
+  
+  /* Numbered items styling */
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ol li {
+    counter-increment: item;
+    margin-bottom: 0.75rem;
+  }
+  
+  ol li:before {
+    content: counter(item) ". ";
+    color: #777;
+  }
+  
+  ol li a {
+    display: inline-block;
   }
 }

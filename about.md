@@ -10,87 +10,81 @@ title: 关于我
 
 <div class="resume-container">
   <header class="resume-header">
-    <div class="profile-picture">
-      <div class="profile-picture-placeholder">
-        <i class="fas fa-user"></i>
-      </div>
-    </div>
-    <h1 class="profile-title">Your Name</h1>
-    <p class="profile-subtitle">职位 · 职位 · 职位</p>
-    <p class="profile-quote">"在此处添加你的座右铭"</p>
+    <h1 class="profile-title">Egopposer</h1>
+    <p class="profile-subtitle">人工智能专业 · 计算机视觉 · 医学影像处理</p>
+    <p class="profile-quote">"在热情消逝前"</p>
     <div class="profile-intro">
-      <p>在此处添加个人简介。描述您的学历、主要专业、研究方向等。</p>
-      <p>在此处添加个人成就、特点或其他值得强调的内容。</p>
+      <p>重庆大学大数据与软件学院人工智能专业本科生，专业排名 1/64（前1%）</P>
+      <p>熟悉计算机视觉、自然语言处理，对多模态大模型以及音频音乐领域具有浓厚兴趣。</p>
     </div>
     <div class="stats">
       <div class="stat-item">
-        <div class="stat-number" data-count="5">0</div>
-        <div class="stat-label">工作经验</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="10">0</div>
-        <div class="stat-label">完成的项目</div>
+        <div class="stat-number" data-count="3.88">0</div>
+        <div class="stat-label">GPA/4.0</div>
       </div>
       <div class="stat-item">
         <div class="stat-number" data-count="3">0</div>
-        <div class="stat-label">贡献的开源</div>
+        <div class="stat-label">代表项目</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="4">0</div>
+        <div class="stat-label">荣誉奖项</div>
       </div>
     </div>
   </header>
   
-  <nav class="resume-tabs">
-    <button class="tab-btn active" data-tab="education">教育背景</button>
-    <button class="tab-btn" data-tab="skills">核心技能</button>
-    <button class="tab-btn" data-tab="projects">代表项目</button>
-    <button class="tab-btn" data-tab="interests">兴趣爱好</button>
-    <button class="tab-btn" data-tab="contact">联系我</button>
-  </nav>
-  
   <main class="resume-content">
-    <section id="education" class="resume-section active">
+    <section id="education" class="resume-section">
       <h2 class="section-title">教育背景</h2>
       <div class="education-container">
         <div class="education-item">
-          <div class="education-school">学校名称</div>
-          <div class="education-degree">学位/专业</div>
-          <div class="education-period">xxxx - xxxx</div>
-        </div>
-        <div class="education-item">
-          <div class="education-school">学校名称</div>
-          <div class="education-degree">学位/专业</div>
-          <div class="education-period">xxxx - xxxx</div>
-        </div>
-        <div class="education-item">
-          <div class="education-school">学校名称</div>
-          <div class="education-degree">学位/专业</div>
-          <div class="education-period">xxxx - xxxx</div>
+          <div class="education-school">重庆大学</div>
+          <div class="education-degree">大数据与软件学院 人工智能专业</div>
+          <div class="education-period">2022.08 - 至今</div>
+          <div class="education-detail">
+            <p>GPA: 3.88/4.0 | 专业排名: 1/64（前1%）</p>
+            <p><strong>主修课程：</strong>深度学习（97）、统计分析（97）、离散数学（96）、概率论与数理统计（95）、数据结构与算法（95）、数据库原理与设计（94）</p>
+          </div>
         </div>
       </div>
     </section>
-    
     <section id="skills" class="resume-section">
       <h2 class="section-title">核心技能</h2>
       <div class="skills-container">
         <div class="skill-item">
-          <div class="skill-name">技能名称</div>
+          <div class="skill-name">深度学习</div>
           <div class="skill-bar">
             <div class="skill-progress" data-level="90"></div>
           </div>
-          <div class="skill-description">技能描述，包括您在该领域的专长和经验。</div>
+          <div class="skill-description">掌握卷积神经网络、注意力机制、对比学习等技术，能够独立设计与实现复杂的深度学习模型用于计算机视觉任务。</div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">技能名称</div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="75"></div>
-          </div>
-          <div class="skill-description">技能描述，包括您在该领域的专长和经验。</div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name">技能名称</div>
+          <div class="skill-name">医学影像处理</div>
           <div class="skill-bar">
             <div class="skill-progress" data-level="85"></div>
           </div>
-          <div class="skill-description">技能描述，包括您在该领域的专长和经验。</div>
+          <div class="skill-description">擅长眼底医学影像分析与多标签分类任务，熟悉医学影像数据的预处理和增强技术，提出创新算法提升模型诊断准确率。</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">前端开发</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="75"></div>
+          </div>
+          <div class="skill-description">熟练使用Vue3、Vite等技术栈进行前端开发，具备数据可视化能力，能够设计并实现交互式可视化系统。</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">科研工具与方法</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="95"></div>
+          </div>
+          <div class="skill-description">善于构建高效科研工作流，熟练使用wandb平台进行实验记录与分析，利用Notion进行团队协作与任务管理。</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">数学建模</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="85"></div>
+          </div>
+          <div class="skill-description">具有扎实的数学建模能力，曾获美国大学生数学建模比赛Meritorious Winner和全国大学生数学建模竞赛重庆省一等奖。</div>
         </div>
       </div>
     </section>
@@ -99,31 +93,49 @@ title: 关于我
       <h2 class="section-title">代表项目</h2>
       <div class="projects-container">
         <div class="project-item">
-          <div class="project-title">项目名称</div>
-          <div class="project-description">项目描述，包括您的角色、项目目标和成果。</div>
+          <div class="project-title">基于眼底医学影像的智能诊断系统</div>
+          <div class="project-role">项目负责人 | 2025.01-至今</div>
+          <div class="project-description">
+            <p>• 提出一种融合三元注意力机制与RexNet网络结构的深度学习模型，开展多标签眼底图像分类任务研究，显著提升了模型在复杂环境与低频疾病诊断场景下的准确性。</p>
+            <p>• 提出并实现了一种结合激进数据增强和扩散增强的对比学习预训练方法，有效提高了模型的特征表征能力，并显著缩短了下游任务的训练周期。</p>
+            <p>• 利用wandb平台对团队深度学习实验的参数与结果进行系统性记录与分析；同时通过Notion团队协作空间，对团队成员任务分配、进度追踪及资料共享进行规范化管理。</p>
+          </div>
           <div class="tech-tags">
-            <span class="tech-tag">技术1</span>
-            <span class="tech-tag">技术2</span>
-            <span class="tech-tag">技术3</span>
-            <span class="tech-tag">技术4</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">深度学习</span>
+            <span class="tech-tag">医学影像</span>
+            <span class="tech-tag">对比学习</span>
+            <span class="tech-tag">多标签分类</span>
           </div>
         </div>
         <div class="project-item">
-          <div class="project-title">项目名称</div>
-          <div class="project-description">项目描述，包括您的角色、项目目标和成果。</div>
+          <div class="project-title">中医交互式可视化系统</div>
+          <div class="project-role">核心成员 | 2025.03-至今</div>
+          <div class="project-description">
+            <p>• 基于 Vue3 与 Vite 技术栈，设计并开发了基于力引导布局的复合弦图，实现了中医方剂与药材的高效交互式可视化展示。</p>
+            <p>• 借助大语言模型 API，采用并发处理方式，有效解决了传统正则表达式难以处理的数据清洗与预处理问题，将非结构化数据转化为结构化 JSON 格式，提升了后续数据分析与处理效率。</p>
+          </div>
           <div class="tech-tags">
-            <span class="tech-tag">技术1</span>
-            <span class="tech-tag">技术2</span>
-            <span class="tech-tag">技术3</span>
+            <span class="tech-tag">Vue3</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">数据可视化</span>
+            <span class="tech-tag">大语言模型</span>
+            <span class="tech-tag">并发处理</span>
           </div>
         </div>
         <div class="project-item">
-          <div class="project-title">项目名称</div>
-          <div class="project-description">项目描述，包括您的角色、项目目标和成果。</div>
+          <div class="project-title">基于ROS2的自动瞄准算法</div>
+          <div class="project-role">核心成员 | 2023.06-2024.02</div>
+          <div class="project-description">
+            <p>• 基于开源视觉自动瞄准算法，负责输入端的视频流预处理、目标仿射变换以及 PnP 位姿解算等关键模块的实现与优化，并成功集成并调试通过了基于扩展卡尔曼滤波（EKF）的目标跟踪算法。</p>
+            <p>• 在 WSL 环境下，利用 Foxglove Studio 完成 ROS2 项目的数据参数可视化，实现了硬件平台上的相机标定及云台精确调平，有效提升了系统的整体稳定性与瞄准精度。</p>
+          </div>
           <div class="tech-tags">
-            <span class="tech-tag">技术1</span>
-            <span class="tech-tag">技术2</span>
-            <span class="tech-tag">技术3</span>
+            <span class="tech-tag">ROS2</span>
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">计算机视觉</span>
+            <span class="tech-tag">EKF滤波</span>
+            <span class="tech-tag">相机标定</span>
           </div>
         </div>
       </div>
@@ -134,24 +146,24 @@ title: 关于我
       <div class="interests-container">
         <div class="interest-item">
           <div class="interest-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <div class="interest-title">兴趣名称</div>
-          <div class="interest-description">简要描述您的兴趣爱好及其对您的影响。</div>
-        </div>
-        <div class="interest-item">
-          <div class="interest-icon">
             <i class="fas fa-music"></i>
           </div>
-          <div class="interest-title">兴趣名称</div>
-          <div class="interest-description">简要描述您的兴趣爱好及其对您的影响。</div>
+          <div class="interest-title">音乐制作</div>
+          <div class="interest-description">J-core，Botanica，Epic爱好者；Supersaw忠实拥趸</div>
         </div>
         <div class="interest-item">
           <div class="interest-icon">
-            <i class="fas fa-coffee"></i>
+            <i class="fas fa-volume-up"></i>
           </div>
-          <div class="interest-title">兴趣名称</div>
-          <div class="interest-description">简要描述您的兴趣爱好及其对您的影响。</div>
+          <div class="interest-title">指弹吉他</div>
+          <div class="interest-description">日式指弹爱好者</div>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-copy"></i>
+          </div>
+          <div class="interest-title">学术交流与分享</div>
+          <div class="interest-description">我自己都不信</div>
         </div>
       </div>
     </section>
@@ -163,38 +175,38 @@ title: 关于我
           <div class="contact-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <div class="contact-method">工作邮箱</div>
-          <div class="contact-value">your.email@example.com</div>
+          <div class="contact-method">电子邮箱</div>
+          <div class="contact-value">476057016line@gmail.com</div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
             <i class="fab fa-weixin"></i>
           </div>
           <div class="contact-method">微信</div>
-          <div class="contact-value">用户名</div>
-          <div class="contact-note">备注信息</div>
+          <div class="contact-note">wxid_hu1jfkv1b3xo22</div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
             <i class="fab fa-github"></i>
           </div>
           <div class="contact-method">GitHub</div>
-          <div class="contact-value">账号链接</div>
+          <div class="contact-value">github.com/line2345</div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
-            <i class="fab fa-twitter"></i>
+            <i class="fas fa-graduation-cap"></i>
           </div>
-          <div class="contact-method">Twitter</div>
-          <div class="contact-value">账号信息</div>
+          <div class="contact-method">Discord</div>
+          <div class="contact-value">111</div>
+
         </div>
       </div>
     </section>
   </main>
   
   <footer class="resume-footer">
-    <p>© <span id="current-year">2025</span> Your Name</p>
-    <p>个人签名或座右铭</p>
+    <p>© <span id="current-year">2025</span> Egopposer</p>
+    <p>在行囊充沛后</p>
   </footer>
 </div>
 
@@ -228,7 +240,7 @@ title: 关于我
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 2rem 1rem;
   border-radius: 12px;
   background-color: #ffffff;
@@ -350,44 +362,9 @@ title: 关于我
   color: #7a7a7a;
 }
 
-.resume-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tab-btn {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background-color: #ffffff;
-  color: #4a4a4a;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  font-size: 0.95rem;
-}
-
-.tab-btn:hover {
-  background-color: rgba(166, 193, 238, 0.1);
-}
-
-.tab-btn.active {
-  background: linear-gradient(135deg, #a6c1ee, #f9c5d1);
-  color: white;
-  box-shadow: 0 4px 10px rgba(166, 193, 238, 0.3);
-}
-
 .resume-section {
-  display: none;
+  margin-bottom: 4rem; /* 增加各部分之间的间距 */
   animation: fadeIn 0.5s ease-in-out;
-}
-
-.resume-section.active {
-  display: block;
 }
 
 @keyframes fadeIn {
@@ -403,10 +380,12 @@ title: 关于我
 
 .section-title {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3.5rem; /* 增加标题与内容的间距 */
   position: relative;
   padding-bottom: 0.8rem;
   font-size: 1.5rem;
+  background-color: #fff; /* 添加背景色防止被内容遮挡 */
+  z-index: 2; /* 确保标题始终在内容之上 */
 }
 
 .section-title::after {
@@ -421,10 +400,19 @@ title: 关于我
   border-radius: 3px;
 }
 
-.education-container, .skills-container, .projects-container, .interests-container, .contact-grid {
+.education-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-container, .projects-container, .interests-container, .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1.5fr));
+  gap: 1.5rem;
+  z-index: 1;
 }
 
 .education-item, .skill-item, .project-item, .interest-item, .contact-item {
@@ -432,7 +420,8 @@ title: 关于我
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
-  padding: 1.2rem;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 .education-item:hover, .skill-item:hover, .project-item:hover, .interest-item:hover, .contact-item:hover {
@@ -443,7 +432,7 @@ title: 关于我
 .education-school, .skill-name, .project-title {
   font-weight: 700;
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   color: #a6c1ee;
 }
 
@@ -455,6 +444,22 @@ title: 关于我
 .education-period {
   font-size: 0.9rem;
   color: #7a7a7a;
+  margin-bottom: 0.8rem;
+}
+
+.education-detail {
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+.education-detail p {
+  margin-bottom: 0.5rem;
+}
+
+.project-role {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  margin-bottom: 0.8rem;
 }
 
 .skill-bar {
@@ -480,6 +485,10 @@ title: 关于我
 
 .project-description {
   margin-bottom: 1rem;
+}
+
+.project-description p {
+  margin-bottom: 0.5rem;
 }
 
 .tech-tags {
@@ -548,17 +557,12 @@ title: 关于我
     gap: 1rem;
   }
   
-  .tab-btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-  }
-  
-  .education-container, .skills-container, .projects-container, .interests-container, .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .profile-title {
     font-size: 1.8rem;
+  }
+  
+  .section-title {
+    margin-bottom: 2.5rem;
   }
 }
 </style>
@@ -566,23 +570,6 @@ title: 关于我
 <!-- 内联JavaScript，确保功能不依赖外部文件 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Tab switching
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const sections = document.querySelectorAll('.resume-section');
-  
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Remove active class from all buttons and sections
-      tabBtns.forEach(btn => btn.classList.remove('active'));
-      sections.forEach(section => section.classList.remove('active'));
-      
-      // Add active class to clicked button and corresponding section
-      this.classList.add('active');
-      const tabId = this.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
-    });
-  });
-  
   // Animated counting for stat numbers
   const statNumbers = document.querySelectorAll('.stat-number');
   
@@ -591,7 +578,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      element.textContent = Math.floor(progress * (end - start) + start);
+      element.textContent = Math.floor(progress * (end - start) * 100) / 100;
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }
@@ -606,7 +593,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = entry.target;
         
         if (target.classList.contains('stat-number')) {
-          const finalValue = parseInt(target.getAttribute('data-count'));
+          const finalValue = parseFloat(target.getAttribute('data-count'));
           animateValue(target, 0, finalValue, 1500);
         } else if (target.classList.contains('skill-progress')) {
           const level = target.getAttribute('data-level') + '%';
