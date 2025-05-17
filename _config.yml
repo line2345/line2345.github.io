@@ -1,7 +1,7 @@
 # Setup
-title: Not Pure Poole
-description: A simple, beautiful, and powerful Jekyll theme for blogs
-url: https://vszhub.github.io
+title: Egopposer
+description: line2345's blog
+url: https://line2345.github.io
 avatar: /avatar.jpeg
 paginate: 5
 permalink: pretty
@@ -29,7 +29,7 @@ exclude:
 
 # Optimize Jekyl SEO Tag
 twitter:
-  username: vszhub
+  username: line2345
   card: summary
 logo: logo.png
 social:

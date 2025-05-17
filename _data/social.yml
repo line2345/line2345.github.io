@@ -2,8 +2,8 @@
   url: mailto://476057016line@gmail.com
   icon: fas fa-envelope
 - title: Wechat
-  url: 
-  icon: fab fa-wechat
+  url: weixin://contacts/profile/your_wechat_id
+  icon: fa fa-wechat
 - title: Twitter
   url: https://twitter.com/vszhub
   icon: fab fa-twitter
